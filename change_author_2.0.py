@@ -68,16 +68,17 @@ def if_path(dir_path):
 	:return: dir_path
 	:return: name
 	"""
-	if os.path.isdir(dir_path):
+	if os.path.isdir(dir_path) or dir_path == '':
+        if dir_path == '':
+            dir_path = './'
 		dir_path = dir_path.replace('\\', '/')
 		print('请输入你想要的作者姓名：')
 		name = input()
 		execute(dir_path, name)
-	elif dir_path == '':
-		dir_path = './'
-		print('请输入你想要的作者姓名：')
-		name = input()
-		execute(dir_path, name)
+	# elif 
+		# print('请输入你想要的作者姓名：')
+		# name = input()
+		# execute(dir_path, name)
 	else:
 		print(f'您输入的路径有误，程序将退出！')
 
